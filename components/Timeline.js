@@ -4,17 +4,39 @@ import s from './styles'
 
 class Timeline extends Component {
   render () {
-    const { orientation = 'left', children, lineColor, lineStyle, style, ...otherProps } = this.props
-    const childrenWithProps = React.Children.map(children, child => React.cloneElement(child, { orientation }))
+    const { orientation = 'left', children, lineColor, lineStyle, style, direction, ...otherProps } = this.props
+    const childrenWithProps = React.Children.map(children, child => React.cloneElement(child, { orientation, direction }))
     let leftOrRight = (orientation === 'right') ? { ...s['containerBefore--right'] } : { ...s['containerBefore--left'] }
+
     let lineAppearance = { ...leftOrRight, ...lineStyle }
+
     lineAppearance = lineColor ? { ...lineAppearance, background: lineColor } : lineAppearance
+
+    let TEMPstyle = {
+      ...style,
+      display: 'flex'
+    }
+    let containerAfter = {
+      ...s.containerAfter
+    }
+    let containerBefore = {
+      ...s.containerBefore, ...lineAppearance
+    }
+
+    if (direction === 'horizontal') {
+      containerBefore = { ...containerBefore, ...s['containerBefore--horizontal'] }
+      containerAfter = { ...containerAfter, ...s['containerAfter--horizontal'] }
+    } else {
+      containerBefore = { ...containerBefore, ...s['containerBefore--vertical'] }
+      containerAfter = { ...containerAfter, ...s['containerAfter--vertical'] }
+    }
+
     return (
       <div>
-        <section style={{ ...s.container, ...style }} {...otherProps}>
-          <div style={{ ...s.containerBefore, ...lineAppearance }} />
+        <section style={{ ...s.container, ...TEMPstyle }} {...otherProps}>
+          <div id='Ff' style={containerBefore} />
           {childrenWithProps}
-          <div style={s.containerAfter} />
+          <div style={containerAfter} />
         </section >
       </div>
     )

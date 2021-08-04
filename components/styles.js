@@ -1,35 +1,47 @@
 let style = {
-
+  // rgb(160, 178, 184);
   container: {
     position: 'relative',
     fontSize: '80%',
     fontWeight: 300,
     padding: '10px 0',
-    width: '95%',
     margin: '0 auto'
   },
   containerBefore: {
     content: '',
     position: 'absolute',
-    top: 0,
-    height: '100%',
-    width: 2,
     background: '#a0b2b8'
   },
+  'containerBefore--vertical': {
+    width: 3,
+    height: '100%',
+    top: 0
+  },
+
+  'containerBefore--horizontal': {
+    height: 3,
+    width: '100%',
+    top: '100%'
+  },
+
   'containerBefore--left': {
-    left: '16px'
+    // left: '16px'
   },
   'containerBefore--right': {
     right: '14px'
   },
+
   containerAfter: {
     content: '',
     display: 'table',
     clear: 'both'
   },
+
+  'containerAfter--vertical': {},
+  'containerAfter--horizontal': {},
   event: {
     position: 'relative',
-    margin: '10px 0'
+    margin: '5px 0'
   },
   'event--left': {
     paddingLeft: 45,
@@ -39,6 +51,16 @@ let style = {
     paddingRight: 45,
     textAlign: 'right'
   },
+
+  'event--bottom': {
+    paddingTop: 30,
+    textAlign: 'right'
+  },
+  'event--top': {
+    paddingBottom: 45,
+    textAlign: 'center'
+  },
+
   eventAfter: {
     clear: 'both',
     content: '',
@@ -48,13 +70,22 @@ let style = {
     position: 'absolute',
     top: 0,
     borderRadius: '50%',
-    width: 30,
-    height: 30,
+    width: 35,
+    height: 35,
     marginLeft: 1,
     background: '#e9f0f5',
-    border: '2px solid #6fba1c',
+    border: '3px solid #6fba1c',
     display: 'flex'
   },
+
+  'eventType--stretched': {
+    borderRadius: '17px',
+    fontSize: '24px',
+    textAlign: 'right',
+    display: 'flex',
+    justifyContent: 'center'
+  },
+
   'eventType--left': {
     left: 0
   },
@@ -69,7 +100,8 @@ let style = {
     justifyContent: 'center',
     cursor: 'pointer',
     alignSelf: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 2
   },
   eventContainer: {
     position: 'relative'
@@ -132,10 +164,16 @@ let style = {
   blipStyle: {
     position: 'absolute',
     top: '50%',
-    marginTop: '9px'
+    marginTop: '9px',
+    left: '-5px'
   },
   toggleEnabled: {
     cursor: 'pointer'
+  },
+  blipLabelContainer: {
+    textAlign: 'center',
+    width: '50px'
+    // backgroundColor: "red"
   }
 }
 

@@ -82,6 +82,7 @@
     "typescript": "^3.2.1"
   },
   "dependencies": {
+    "babel-preset-env": "^1.7.0",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
@@ -98,10 +99,5 @@
       "eslint --fix",
       "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
