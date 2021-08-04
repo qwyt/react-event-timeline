@@ -1,5 +1,5 @@
 {
-  "name": "react-event-timeline",
+  "name": "@qwyt/react-event-timeline",
   "description": "A responsive event timeline in React.js",
   "main": "dist/index.js",
   "typings": "typings",
@@ -22,8 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rcdexta/react-event-timeline.git"
+    "url": "https://github.com/qwyt/react-event-timeline.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/qwyt"
+  },
+
   "keywords": [
     "react",
     "timeline",
